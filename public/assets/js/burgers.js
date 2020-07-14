@@ -1,17 +1,17 @@
 $(() => {
     $(".devourIt").on("click", (event) => {
         const id = $(this).data("id");
-        const newBurger = $(this).data("newBurger");
-        const newBurgerState = {
+        const newDevour = $(this).data("newdevour");
+        const newDevourState = {
             devour: newDevour    
         };
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: newBurgerState
+            data: newDevourState
         }) .then(
             () => {
-                console.log("changed burger to", newBurger);
+                console.log("changed burger to", newDevour);
                 location.reload();
             }
         );
@@ -22,7 +22,7 @@ $(() => {
 
         const newBurger = {
             name: $("#bu").val().trim(),
-            devour: $("[name=devour]:checked").val(trim())
+            devour: $("[name=newBurger]:checked").val().trim()
         };
 
         $.ajax("/api/burgers", {
