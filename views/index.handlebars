@@ -3,22 +3,22 @@
 <h2>burgers that havent been devoured</h2>
 
 <ul>
-    {{#each burgers}}
-        {{#if devour}}
+  {{#each burgers}}
+        {{#unless devour}}
             {{> burgers/burger-block devour=true}}
-        {{/if}}
+        {{/unless}}
     {{/each}}
 </ul>
 
 <h2>burgers that have been devoured</h2>
 
 <ul>
-    
-    {{#each burgers}}
-        {{#unless devour}}
+      {{#each burgers}}
+        {{#if devour}}
             {{> burgers/burger-block devour=false}}
-        {{/unless}}
+        {{/if}}
     {{/each}}
+    
 </ul>
 
 <h1>Add your favorite burger</h1>
@@ -30,7 +30,7 @@
 
     <div class="form-group">
         <label for="newBurger">new burger</label><br>
-        <input type="radio" name="newBurger" value="1" checked> New Creation! <br>
+        <input type="radio" name="newBurger" value="0" checked> New Creation! <br>
     </div>
 
     <button type="submit">Add new creation</button>
