@@ -1,6 +1,6 @@
 const connection = require("../config/connection.js");
-
-let printQuestionMarks = (num) => {
+// Helper function for sql syntax
+let print = (num) => {
     var arr = [];
 
     for (var i = 0; i < num; i++) {
@@ -9,7 +9,7 @@ let printQuestionMarks = (num) => {
 
     return arr.toString();
 }
-
+// Convert pairs to sql syntax
 let objToSql = (ob) => {
     var arr = [];
     for (var key in ob) {
@@ -22,7 +22,7 @@ let objToSql = (ob) => {
         }
         return arr.toString();
     }
-}
+}   // Select sql statement
 var orm = {
     all: (tableInput, cb) => {
       var queryString = "SELECT * FROM " + tableInput + ";";
@@ -33,7 +33,7 @@ var orm = {
         cb(result);
       });
     },
-
+        // Insert into sql statement
     create: (table, cols, vals, cb) => {
         var queryString = "INSERT INTO " + table;
     
@@ -41,7 +41,7 @@ var orm = {
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
+        queryString += print(vals.length);
         queryString += ") ";
     
         console.log(queryString);
@@ -54,7 +54,7 @@ var orm = {
           cb(result);
         });
       },
-
+        // Update sql statement
       update: (table, objColVals, condition, cb) => {
         var queryString = "UPDATE " + table;
     
@@ -72,7 +72,7 @@ var orm = {
           cb(result);
         });
       },
-
+        // Delete sql statement
       delete: (table, condition, cb) => {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
@@ -87,5 +87,5 @@ var orm = {
         });
       }
     };
-    
+    // Exports orm
 module.exports = orm;

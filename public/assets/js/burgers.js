@@ -1,3 +1,4 @@
+    // This function for click devour click button
 $(function() {
     $(".devourIt").on("click", function (event) {
         const id = $(this).data("id");
@@ -16,7 +17,7 @@ $(function() {
             }
         );
     });
-
+        // this function for new burger that was typed in
     $(".create-form").on("submit", function(event) {
         event.preventDefault();
 
@@ -35,7 +36,7 @@ $(function() {
             }
         );
     });
-
+        // this function for user wanting to delete burger
     $(".delete-burger").on("click", function(event) {
         const id = $(this).data("id");
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const burger = require("../models/burger.js");
-
+        // This route gets data from burgers table
 router.get("/", (req, res) => {
     burger.all((data) => {
         const object = {
@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
         res.render("index", object);
     });
 });
-
+        // This route post data to table 
 router.post("/api/burgers", (req, res) => {
     burger.create([
         "name", "devour"
@@ -21,7 +21,7 @@ router.post("/api/burgers", (req, res) => {
         res.json({id: result.insertId});
     });
 });
-
+    // This route puts data into handlebars
 router.put("/api/burgers/:id", (req, res) => {
     const condition = 'id = ' + req.params.id;
     console.log("condition", condition);
@@ -37,7 +37,7 @@ router.put("/api/burgers/:id", (req, res) => {
         }
     });
 });
-
+        // This route deletes data
 router.delete("/api/burgers/:id", (req, res) => {
     const condition = "id = " + req.params.id;
 
