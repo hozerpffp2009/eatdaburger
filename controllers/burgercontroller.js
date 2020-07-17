@@ -3,7 +3,7 @@ const router = express.Router();
 const burger = require("../models/burger.js");
         // This route gets data from burgers table
 router.get("/", (req, res) => {
-    burger.all("burgers", (data) => {
+    burger.all((data) => {
         const object = {
             burgers: data
         };
