@@ -1,3 +1,3 @@
-INSERT INTO burgers (name, devour) VALUES ("Double bacon cheese burger", true);
-INSERT INTO burgers (name, devour) VALUES ("Bacon cheese burger", true);
-INSERT INTO burgers (name, devour) VALUES ("California burger", true);
+INSERT INTO burgers (name, devour) VALUES ("Double bacon cheese burger", false);
+INSERT INTO burgers (name, devour) VALUES ("Bacon cheese burger", false);
+INSERT INTO burgers (name, devour) VALUES ("California burger", false);
