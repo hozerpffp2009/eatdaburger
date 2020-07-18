@@ -25,6 +25,7 @@ let objToSql = (ob) => {
 }   // Select sql statement
 var orm = {
     all: (tableInput, cb) => {
+      console.log("tableInput", tableInput)
       var queryString = "SELECT * FROM " + tableInput + ";";
       connection.query(queryString, (err, result) => {
         if (err) {
