@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/hozerpffp2009/eatdaburger#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^5.0.0",
     "http": "0.0.1-security",
     "mysql": "^2.18.1"
